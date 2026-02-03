@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Creashift Corporate</title>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body data-theme="dark">
+    <script>
+        // Immediate theme sync to prevent flash
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.body.setAttribute('data-theme', savedTheme);
+    </script>
+    <!-- Floating Pill Navigation -->
+    <nav class="pill-nav" id="pill-nav">
+        <div class="pill-nav-inner">
+            <a href="index.html" class="pill-logo">
+                <img src="assets/logo.png" alt="Creashift">
+            </a>
+
+            <ul class="pill-menu">
+                <li><a href="index.html#hero" class="pill-link">Home</a></li>
+                <li><a href="index.html#services" class="pill-link">Services</a></li>
+                <li><a href="blog.html" class="pill-link active">Blog</a></li>
+                <li><a href="index.html#stats" class="pill-link">Metrics</a></li>
+                <li><a href="index.html#process" class="pill-link">Process</a></li>
+                <li><a href="index.html#contact" class="pill-link">Contact</a></li>
+            </ul>
+
+            <div class="pill-actions">
+                <button class="pill-theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <span class="theme-icon sun-icon">☀️</span>
+                    <span class="theme-icon moon-icon">🌙</span>
+                </button>
+                <a href="index.html#contact" class="pill-cta">Get Started</a>
+            </div>
+
+            <button class="pill-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="pill-mobile-menu" id="mobile-menu">
+            <a href="index.html#hero" class="mobile-link">Home</a>
+            <a href="index.html#services" class="mobile-link">Services</a>
+            <a href="blog.html" class="mobile-link active">Blog</a>
+            <a href="index.html#stats" class="mobile-link">Metrics</a>
+            <a href="index.html#process" class="mobile-link">Process</a>
+            <a href="index.html#contact" class="mobile-link">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Scroll Progress Indicators -->
+    <div class="scroll-progress-top">
+        <div class="progress-bar-top" id="progress-bar"></div>
+    </div>
+    <div class="custom-scrollbar"></div>
+
+    <main class="main-content">
+        <!-- Blog Section -->
+        <section class="blog-index">
+            <div class="section-video-bg">
+                <video autoplay muted loop playsinline class="video-bg-element">
+                    <source
+                        src="https://assets.mixkit.co/videos/preview/mixkit-abstract-animation-of-blue-and-purple-dots-44315-large.mp4"
+                        type="video/mp4">
+                </video>
+                <div class="video-overlay"></div>
+            </div>
+
+            <div class="blog-container">
+                <header class="blog-header">
+                    <h1 class="hero-title-corporate"><span class="gradient-text">Strategic</span> Insights</h1>
+                    <p class="section-subtitle">Exploring the intersection of high-end strategy and futuristic
+                        technology.</p>
+                </header>
+
+                <div class="blog-grid" id="blog-grid">
+                    <!-- Dynamic Posts will be injected here -->
+                    <div class="loading-scanner">
+                        <div class="scanner-line"></div>
+                        <p>Scanning Mainframe for Insights...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Success Overlay (Placeholder) -->
+    <div class="success-overlay" id="success-overlay" style="display: none;">
+        <div class="success-content">
+            <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+            <h2>Success!</h2>
+            <button class="btn-corporate btn-primary" id="close-success">Close</button>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const postId = urlParams.get('id');
+            fetchPosts(postId);
+        });
+
+        async function fetchPosts(postId = null) {
+            const grid = document.getElementById('blog-grid');
+            const header = document.querySelector('.blog-header');
+
+            try {
+                const response = await fetch('/api/posts');
+                const posts = await response.json();
+
+                if (posts.length === 0) {
+                    grid.innerHTML = '<p class="section-subtitle">No strategic insights found in database.</p>';
+                    return;
+                }
+
+                if (postId) {
+                    // DETAIL VIEW
+                    const post = posts.find(p => p.id === postId);
+                    if (!post) {
+                        grid.innerHTML = '<h2>Asset Not Found</h2><a href="blog.html" class="btn-corporate btn-secondary">Back to Insights</a>';
+                        return;
+                    }
+
+                    // Update Header for context
+                    header.style.display = 'none'; // Hide listing header
+
+                    grid.innerHTML = `
+                        <div class="blog-detail-view">
+                            <a href="blog.html" class="btn-corporate btn-secondary back-btn">
+                                <i class="fas fa-arrow-left"></i> Back to Insights
+                            </a>
+                            <div class="post-detail-header">
+                                <div class="post-meta">
+                                    <span class="post-date">${new Date(post.created_at).toLocaleDateString()}</span>
+                                    <span class="post-category-badge">${post.category}</span>
+                                </div>
+                                <h1 class="hero-title-corporate">${post.title}</h1>
+                                <div class="post-detail-media">
+                                    <img src="${post.image_url || 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200'}" alt="${post.title}">
+                                </div>
+                            </div>
+                            <div class="post-detail-content">
+                                ${post.content}
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    // LISTING VIEW
+                    header.style.display = 'block';
+                    grid.innerHTML = posts.map(post => `
+                        <article class="blog-card-futuristic">
+                            <div class="card-glass-glow"></div>
+                            <div class="post-thumbnail">
+                                <img src="${post.image_url || 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800'}" alt="${post.title}">
+                            </div>
+                            <div class="card-content">
+                                <div class="post-meta">
+                                    <span class="post-date">${new Date(post.created_at).toLocaleDateString()}</span>
+                                    <span class="post-category">${post.category}</span>
+                                </div>
+                                <h2 class="post-title"><a href="blog.html?id=${post.id}">${post.title}</a></h2>
+                                <p class="post-excerpt">${post.excerpt}</p>
+                                <a href="blog.html?id=${post.id}" class="read-more-btn">Read More <span class="btn-arrow">→</span></a>
+                            </div>
+                        </article>
+                    `).join('');
+                }
+            } catch (err) {
+                console.warn('Backend connection unstable. Entering fallback mode.');
+                grid.innerHTML = '<p>Strategic assets currently unavailable. Please check mainframe connection.</p>';
+            }
+        }
+    </script>
+</body>
+
+</html>
