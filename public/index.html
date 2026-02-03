@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Creashift - Corporate digital marketing excellence. Professional services with cutting-edge technology.">
+    <title>Creashift - Corporate Digital Marketing Excellence</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="index.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Floating Pill Navigation -->
+    <nav class="pill-nav" id="pill-nav">
+        <div class="pill-nav-inner">
+            <a href="#" class="pill-logo">
+                <img src="assets/logo.png" alt="Creashift">
+            </a>
+
+            <ul class="pill-menu">
+                <li><a href="#hero" class="pill-link active" data-section="hero">Home</a></li>
+                <li><a href="#services" class="pill-link" data-section="services">Services</a></li>
+                <li><a href="blog.html" class="pill-link">Blog</a></li>
+                <li><a href="#stats" class="pill-link" data-section="stats">Metrics</a></li>
+                <li><a href="#process" class="pill-link" data-section="process">Process</a></li>
+                <li><a href="#contact" class="pill-link" data-section="contact">Contact</a></li>
+            </ul>
+
+            <div class="pill-actions">
+                <button class="pill-theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <span class="theme-icon sun-icon">☀️</span>
+                    <span class="theme-icon moon-icon">🌙</span>
+                </button>
+                <a href="#contact" class="pill-cta">Get Started</a>
+            </div>
+
+            <button class="pill-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="pill-mobile-menu" id="mobile-menu">
+            <a href="#hero" class="mobile-link active">Home</a>
+            <a href="#services" class="mobile-link">Services</a>
+            <a href="blog.html" class="mobile-link">Blog</a>
+            <a href="#stats" class="mobile-link">Metrics</a>
+            <a href="#process" class="mobile-link">Process</a>
+            <a href="#contact" class="mobile-link">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Hero Section with Animated Grid -->
+        <section class="hero-corporate" id="hero">
+            <canvas class="hero-logo-particles" id="hero-logo-particles"></canvas>
+            <canvas class="hero-grid-bg" id="hero-grid"></canvas>
+
+            <div class="hero-content-centered">
+                <div class="hero-left">
+                    <h1 class="hero-title-corporate">
+                        <span class="title-line">Transform Your</span>
+                        <span class="title-line gradient-text">Digital Presence</span>
+                    </h1>
+                    <p class="hero-subtitle">Corporate digital marketing solutions powered by cutting-edge technology
+                        and data-driven strategies.</p>
+                    <div class="hero-cta-group">
+                        <button class="btn-corporate btn-primary" id="hero-cta-primary">
+                            <span>Get Started</span>
+                            <span class="btn-arrow">→</span>
+                        </button>
+                        <a href="services.html" class="btn-corporate btn-secondary" id="hero-cta-secondary">
+                            <span>Learn More</span>
+                        </a>
+                    </div>
+
+                    <!-- Hero Social Links -->
+                    <div class="hero-social-links">
+                        <a href="https://www.facebook.com/share/1CLQuv7fQ7/" class="hero-social-icon" target="_blank"
+                            rel="noopener noreferrer" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/creashiftads?igsh=MXViZDN2dGkwMm55ag=="
+                            class="hero-social-icon" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/creashift/" class="hero-social-icon" target="_blank"
+                            rel="noopener noreferrer" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+
+                    <!-- Subtle Value Highlights (Fallback + Dynamic) -->
+                    <div class="hero-highlights">
+                        <div class="highlight-item">
+                            <span class="highlight-icon">◈</span>
+                            <div class="highlight-text">
+                                <strong>Strategic Excellence</strong>
+                                <span>Data-led performance monitoring</span>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">◈</span>
+                            <div class="highlight-text">
+                                <strong>Machined Precision</strong>
+                                <span>High-fidelity implementation</span>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">◈</span>
+                            <div class="highlight-text">
+                                <strong>Global Scale</strong>
+                                <span>Infrastructure built for expansion</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SERVICES SECTION - BENTO ASSEMBLY
+             ============================================ -->
+        <section id="services" class="services-scroll-scene">
+            <div class="section-video-bg">
+                <video autoplay muted loop playsinline class="video-bg-element">
+                    <source
+                        src="https://assets.mixkit.co/videos/preview/mixkit-abstract-animation-of-cubes-floating-in-the-air-44337-large.mp4"
+                        type="video/mp4">
+                </video>
+                <div class="video-overlay"></div>
+            </div>
+
+            <div class="services-sticky-container">
+                <div class="services-floating">
+                    <div class="container">
+                        <div class="section-header text-center mb-5">
+                            <span class="section-subtitle">Our Expertise</span>
+                            <h2 class="section-title-corporate">Digital Catalyst Solutions</h2>
+                        </div>
+
+                        <!-- REBUILT Slider Viewport -->
+                        <div id="curved-slider-container" class="curved-slider-container">
+                            <div id="curved-slider-viewport" class="curved-slider-viewport">
+                                <!-- Cards injected by JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Truly Static & Always Visible "Learn More" - Now inside sticky -->
+                <div class="btn-services-static-wrap">
+                    <a href="services.html" class="btn-services-static">
+                        <span>Learn More</span>
+                        <span class="btn-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             METRICS SECTION (OUTSIDE ANIMATION WRAPPER)
+             This section is NOT a child of any animated element.
+             ============================================ -->
+        <!-- Stats Section with Animated Counters -->
+        <section class="stats-corporate" id="stats">
+            <div class="section-video-bg">
+                <video autoplay muted loop playsinline class="video-bg-element">
+                    <source
+                        src="https://assets.mixkit.co/videos/preview/mixkit-digital-data-screen-with-numbers-and-graphs-34538-large.mp4"
+                        type="video/mp4">
+                </video>
+                <div class="video-overlay"></div>
+            </div>
+            <div class="section-header">
+                <h2 class="section-title-corporate">Strategic Impact</h2>
+                <p class="section-subtitle">Data-driven results across our global network</p>
+            </div>
+            <div class="stats-grid" id="stats-grid">
+                <!-- Stats will be injected dynamically -->
+            </div>
+        </section>
+
+        <!-- Process Timeline -->
+        <section class="process-corporate" id="process">
+            <div class="section-video-bg">
+                <video autoplay muted loop playsinline class="video-bg-element">
+                    <source
+                        src="https://assets.mixkit.co/videos/preview/mixkit-abstract-animation-of-blue-and-purple-dots-44315-large.mp4"
+                        type="video/mp4">
+                </video>
+                <div class="video-overlay"></div>
+            </div>
+            <div class="section-header">
+                <h2 class="section-title-corporate">Our Process</h2>
+                <p class="section-subtitle">A proven methodology for digital success</p>
+            </div>
+
+            <div class="process-vertical" id="process-vertical">
+                <!-- Process checkpoints will be injected dynamically -->
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-corporate" id="contact">
+            <div class="section-video-bg">
+                <video autoplay muted loop playsinline class="video-bg-element">
+                    <source
+                        src="https://assets.mixkit.co/videos/preview/mixkit-digital-circuit-board-background-34509-large.mp4"
+                        type="video/mp4">
+                </video>
+                <div class="video-overlay"></div>
+            </div>
+            <div class="contact-container-corporate">
+                <div class="section-header">
+                    <h2 class="section-title-corporate">Let's Connect</h2>
+                    <p class="section-subtitle">Ready to transform your digital presence?</p>
+                </div>
+
+                <form class="contact-form-corporate" id="contact-form">
+                    <div class="form-row">
+                        <div class="form-group-corporate">
+                            <input type="text" id="form-name" name="name" required>
+                            <label for="form-name">Full Name</label>
+                            <div class="form-border"></div>
+                        </div>
+
+                        <div class="form-group-corporate">
+                            <input type="email" id="form-email" name="email" required>
+                            <label for="form-email">Email Address</label>
+                            <div class="form-border"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group-corporate">
+                        <input type="text" id="form-company" name="company" required>
+                        <label for="form-company">Company Name</label>
+                        <div class="form-border"></div>
+                    </div>
+
+                    <div class="form-group-corporate">
+                        <textarea id="form-message" name="message" rows="4" required></textarea>
+                        <label for="form-message">Message</label>
+                        <div class="form-border"></div>
+                    </div>
+
+                    <button type="submit" class="btn-corporate btn-primary btn-submit" id="form-submit">
+                        <span>Send Message</span>
+                        <span class="btn-arrow">→</span>
+                    </button>
+                </form>
+            </div>
+
+            <canvas class="contact-particles" id="contact-particles"></canvas>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer-corporate">
+            <div class="footer-social-links">
+                <a href="https://www.facebook.com/share/1CLQuv7fQ7/" class="footer-social-icon" target="_blank"
+                    rel="noopener noreferrer" aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/creashiftads?igsh=MXViZDN2dGkwMm55ag==" class="footer-social-icon"
+                    target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/creashift/" class="footer-social-icon" target="_blank"
+                    rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+            <p>&copy; 2026 Creashift. Corporate Digital Excellence.</p>
+        </footer>
+
+    </main>
+
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- WhatsApp Sticky Button -->
+    <a href="https://wa.me/916282852686" class="whatsapp-sticky" target="_blank" rel="noopener noreferrer"
+        aria-label="Contact us on WhatsApp">
+        <img src="assets/vecteezy_whatsapp-logo-3d-render_12162809.png" alt="WhatsApp"
+            style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+    </a>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
