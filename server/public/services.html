@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Creashift Corporate</title>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="index.css">
+    <style>
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .services-header {
+            padding: 120px 10px 60px !important;
+            /* Reduced from 40px to 10px */
+            background: var(--bg-secondary);
+            position: relative;
+            overflow: hidden;
+            text-align: left !important;
+            width: 100% !important;
+        }
+
+        .services-header .container {
+            max-width: 800px !important;
+            margin: 0 !important;
+            /* Forces layout to the left */
+            text-align: left !important;
+            display: block !important;
+            padding: 0;
+        }
+
+        .services-header h1.hero-title-corporate {
+            font-size: 1.75rem !important;
+            /* 50% of original 3.5rem */
+            text-align: left !important;
+            margin-bottom: 0.5rem;
+        }
+
+        .services-header p.section-subtitle {
+            text-align: left !important;
+            margin-left: 0 !important;
+            max-width: 100%;
+        }
+
+        .back-nav {
+            position: fixed;
+            top: 40px;
+            left: 40px;
+            z-index: 1000;
+        }
+
+        .btn-corporate {
+            padding: 0.7rem 1.4rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary {
+            background: var(--bg-accent);
+            color: var(--text-primary) !important;
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .service-section {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            padding: 100px 0;
+            border-bottom: 1px solid var(--border-color);
+            scroll-margin-top: 20px;
+        }
+
+        .service-section:nth-child(even) {
+            background: var(--bg-secondary);
+            opacity: 0.8;
+        }
+
+        .service-container {
+            max-width: 800px !important;
+            margin: 0 !important;
+            /* Pull to left */
+            padding: 0 40px;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 1.5rem !important;
+            align-items: flex-start !important;
+            text-align: left !important;
+        }
+
+        @media (max-width: 768px) {
+            .service-container {
+                padding: 0 10px;
+                /* Reduced to 10px for narrow margins */
+            }
+        }
+
+        .service-visual {
+            position: relative;
+        }
+
+        .service-icon-box {
+            font-size: 2.5rem !important;
+            /* Reduced further to ensure 50% feel */
+            width: 70px !important;
+            height: 70px !important;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            backdrop-filter: blur(10px);
+            margin: 0 !important;
+            box-shadow: var(--card-shadow);
+        }
+
+        .service-content h2 {
+            font-size: 1.5rem !important;
+            /* Precisely 50% of 3rem */
+            font-weight: 800;
+            margin-bottom: 1rem !important;
+            line-height: 1.2;
+            text-align: left !important;
+            color: var(--text-primary);
+        }
+
+        .service-desc-large {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-item {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .feature-item i {
+            color: #8B5CF6;
+            margin-top: 4px;
+        }
+
+        .gradient-text {
+            color: var(--text-primary);
+            background: none;
+        }
+
+        body[data-theme="dark"] .gradient-text {
+            color: var(--white);
+        }
+
+        body[data-theme="light"] .gradient-text {
+            color: var(--accent-primary);
+        }
+
+        /* Smooth Scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body data-theme="dark">
+    <script>
+        // Immediate theme sync to prevent flash
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.body.setAttribute('data-theme', savedTheme);
+    </script>
+    <!-- Navigation Back -->
+    <nav class="back-nav">
+        <a href="index.html" class="btn-corporate btn-secondary">
+            <i class="fas fa-arrow-left"></i> Back to Main
+        </a>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="services-header">
+        <div class="container">
+            <h1 class="hero-title-corporate">Our <span class="gradient-text">Expertise</span></h1>
+            <p class="section-subtitle">Deep specialized solutions for corporate leadership.</p>
+        </div>
+    </header>
+
+    <!-- Services Dynamic List -->
+    <main id="services-list-container">
+        <!-- Sections will be injected here -->
+        <div style="text-align: center; padding: 100px;">
+            <p>Provisioning global service nodes...</p>
+        </div>
+    </main>
+
+    <script>
+        const STATIC_SERVICES = [
+            {
+                id: "1",
+                icon: "🔍",
+                title: "SEO Optimization",
+                desc: "Strategic search dominance.",
+                detailed_desc: "<h2>Search Strategy</h2><p>Data-led visibility optimization.</p>",
+                features: "Technical Audit\nKeyword Strategy"
+            }
+        ];
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                // Try to fetch from server
+                const response = await fetch('/api/services');
+                if (!response.ok) throw new Error("Server fetch failed");
+                let services = await response.json();
+
+                if (services && services.value) services = services.value;
+                if (!Array.isArray(services) || services.length === 0) throw new Error("Invalid or empty data");
+
+                renderServices(services);
+            } catch (e) {
+                console.warn("Using static fallback for services:", e.message);
+                // If fetch fails, use the hardcoded STATIC_SERVICES
+                renderServices(STATIC_SERVICES);
+            }
+
+            // Handle initial hash scroll after rendering
+            if (window.location.hash) {
+                setTimeout(() => {
+                    const target = document.querySelector(window.location.hash);
+                    if (target) target.scrollIntoView({ behavior: 'smooth' });
+                }, 500);
+            }
+        });
+
+        function renderServices(services) {
+            const container = document.getElementById('services-list-container');
+            container.innerHTML = services.map(s => `
+                <section class="service-section" id="service-${s.id}">
+                    <div class="service-container">
+                        <div class="service-visual">
+                            <div class="service-icon-box">${s.icon || '⚡️'}</div>
+                        </div>
+                        <div class="service-content">
+                            <h2 class="gradient-text">${s.title}</h2>
+                            <p class="service-desc-large">${s.detailed_desc || s.desc}</p>
+                            
+                            ${s.features ? `
+                                <div class="features-grid">
+                                    ${s.features.split('\n').filter(f => f.trim()).map(f => `
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <div>${f.trim()}</div>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                </section>
+            `).join('');
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer-corporate"
+        style="padding: 60px 0; border-top: 1px solid rgba(255,255,255,0.05); text-align: center;">
+        <div class="footer-social-links">
+            <a href="https://www.facebook.com/share/1CLQuv7fQ7/" class="footer-social-icon" target="_blank"
+                rel="noopener noreferrer" aria-label="Facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/creashiftads?igsh=MXViZDN2dGkwMm55ag==" class="footer-social-icon"
+                target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/creashift/" class="footer-social-icon" target="_blank"
+                rel="noopener noreferrer" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+        <p>&copy; 2026 Creashift. Corporate Digital Excellence.</p>
+    </footer>
+
+    <!-- WhatsApp Sticky Button -->
+    <a href="https://wa.me/916282852686" class="whatsapp-sticky" target="_blank" rel="noopener noreferrer"
+        aria-label="Contact us on WhatsApp">
+        <img src="assets/vecteezy_whatsapp-logo-3d-render_12162809.png" alt="WhatsApp"
+            style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+    </a>
+</body>
+
+</html>
